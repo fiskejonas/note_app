@@ -1,0 +1,15 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simple Note-Taking App</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- HTMX CDN -->
+    <script src="https://unpkg.com/htmx.org@1.9.4"></script>
+  </head>
+  <body class="bg-gray-700">
+    <div class="container text-white mx-auto h-screen grid place-items-center p-4">{% block content %}{% endblock %}</div>
+  </body>
+</html>
