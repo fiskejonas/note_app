@@ -1,4 +1,3 @@
-# app.py
 import os
 from flask import Flask, render_template, request
 from models import db, Note
@@ -38,4 +37,4 @@ def delete_note(note_id):
     return '', 200
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=9090, debug=True)

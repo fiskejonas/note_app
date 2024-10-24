@@ -1,7 +1,10 @@
 __pycache__/
 lib/
 
-.env
+env
 
 bin/
 pyvenv.cfg
+.cursorignore
+
+include

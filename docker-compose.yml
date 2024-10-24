@@ -1,0 +1,47 @@
+services:
+
+  db:
+    image: postgres:13-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - env
+    networks:
+      - dbnet
+
+
+  app:
+    build: .
+    volumes:
+      - .:/app
+    env_file:
+      - env
+    depends_on:
+      - db
+    networks:
+      - dbnet
+      - webnet
+
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "9090:80"
+    volumes:
+      - ./config/nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - app
+
+    networks:
+      - webnet
+
+
+volumes:
+  postgres_data:
+
+
+networks:
+  dbnet:
+    driver: bridge
+  webnet:
+    driver: bridge
