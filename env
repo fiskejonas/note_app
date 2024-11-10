@@ -1,6 +1,0 @@
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=jonas
-POSTGRES_DB=notetaking_db
-
-DATABASE_URL=postgresql://postgres:jonas@db:5432/notetaking_db
-
