@@ -8,3 +8,7 @@ pyvenv.cfg
 .cursorignore
 
 include
+
+.DS_Store
+
+.gitignore
